@@ -1,0 +1,100 @@
+{
+  "manifest_version": 3,
+  "name": "Amazon Bot",
+  "version": "1.0",
+  "description": "An Automation Bot which moves around amazon like a human.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.amazon.com/*",
+    "https://ouoiuouoiuoiuoiu.000webhostapp.com/query.php"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.com/s?k=*","*://*.amazon.fr/s?k=*","*://*.amazon.co.uk/s?k=*","*://*.amazon.com.be/s?k=*","*://*.amazon.it/s?k=*","*://*.amazon.de/s?k=*","*://*.amazon.ca/s?k=*","*://*.amazon.es/s?k=*","*://*.amazon.pl/s?k=*","*://*.amazon.in/s?k=*","*://*.amazon.nl/s?k=*"],
+      "js": ["yt.js"]
+    },
+    {
+      "matches": ["*://*.amazon.com/*/dp/*/ref=*","*://*.amazon.fr/*/dp/*","*://*.amazon.co.uk/*/dp/*","*://*.amazon.com.be/*/dp/*","*://*.amazon.it/*/dp/*","*://*.amazon.de/*/dp/*","*://*.amazon.ca/*/dp/*","*://*.amazon.es/*/dp/*","*://*.amazon.pl/*/dp/*","*://*.amazon.in/*/dp/*","*://*.amazon.nl/*/dp/*","*://*.amazon.com/gp/aw/*","*://*.amazon.fr/gp/aw/*","*://*.amazon.co.uk/gp/aw/*","*://*.amazon.com.be/gp/aw/*","*://*.amazon.it/gp/aw/*","*://*.amazon.de/gp/aw/*","*://*.amazon.ca/gp/aw/*","*://*.amazon.es/gp/aw/*","*://*.amazon.pl/gp/aw/*","*://*.amazon.in/gp/aw/*","*://*.amazon.nl/gp/aw/*"],
+      "js": ["item.js"]
+    },
+    {
+      "matches": ["*://*.amazon.com/ap/signin?*", "*://*.amazon.com/ap/register?*", "*://*.amazon.com/ref=ap_frn_logo", "*://*.amazon.com/ref=nav_logo", "*://*.amazon.com/stores/*"],
+      "js": ["reset.js"]
+    },
+    {
+      "matches": ["*://*.amazon.com/cart/*","*://*.amazon.com/gp/cart/*","*://*.amazon.fr/cart/*","*://*.amazon.fr/gp/cart/*","*://*.amazon.co.uk/cart/*","*://*.amazon.co.uk/gp/cart/*","*://*.amazon.be/cart/*","*://*.amazon.be/gp/cart/*","*://*.amazon.it/cart/*","*://*.amazon.it/gp/cart/*","*://*.amazon.de/cart/*","*://*.amazon.de/gp/cart/*","*://*.amazon.ca/cart/*","*://*.amazon.ca/gp/cart/*","*://*.amazon.es/cart/*","*://*.amazon.es/gp/cart/*","*://*.amazon.pl/cart/*","*://*.amazon.pl/gp/cart/*","*://*.amazon.in/cart/*","*://*.amazon.in/gp/cart/*","*://*.amazon.nl/cart/*","*://*.amazon.nl/gp/cart/*"],
+      "js": ["cart.js"]
+    },
+    {
+      "matches": ["*://*.amazon.com/gp/goldbox*","*://*.amazon.fr/gp/goldbox*","*://*.amazon.co.uk/gp/goldbox*","*://*.amazon.com.be/gp/goldbox*","*://*.amazon.it/gp/goldbox*","*://*.amazon.de/gp/goldbox*","*://*.amazon.ca/gp/goldbox*","*://*.amazon.es/gp/goldbox*","*://*.amazon.pl/gp/goldbox*"],
+      "js": ["de.js"]
+    },
+    {
+      "matches": ["*://*.wikipedia.org/*","*://*.bestbuy.com/*","*://*.wikipedia.org/*","*://*.tomklingenstein.com/*","*://*.bbc.com/*"],
+      "js": ["web.js"]
+    },
+
+    
+
+    {
+      "matches": ["*://*.amazon.fr/ap/signin?*", "*://*.amazon.fr/ap/register?*", "*://*.amazon.fr/ref=ap_frn_logo", "*://*.amazon.fr/ref=nav_logo", "*://*.amazon.fr/stores/*"],
+      "js": ["resetFr.js"]
+    },
+
+    {
+      "matches": ["*://*.amazon.co.uk/ap/signin?*", "*://*.amazon.co.uk/ap/register?*", "*://*.amazon.co.uk/ref=ap_frn_logo", "*://*.amazon.co.uk/ref=nav_logo", "*://*.amazon.co.uk/stores/*","*://*.amazon.co.uk/gp/aw/*"],
+      "js": ["resetUk.js"]
+    },
+
+    {
+      "matches": ["*://*.amazon.com.be/ap/signin?*", "*://*.amazon.com.be/ap/register?*", "*://*.amazon.com.be/ref=ap_frn_logo", "*://*.amazon.com.be/ref=nav_logo", "*://*.amazon.com.be/stores/*"],
+      "js": ["resetbe.js"]
+    },
+
+    {
+      "matches": ["*://*.amazon.it/ap/signin?*", "*://*.amazon.it/ap/register?*", "*://*.amazon.it/ref=ap_frn_logo", "*://*.amazon.it/ref=nav_logo", "*://*.amazon.it/stores/*"],
+      "js": ["resetit.js"]
+    },
+    {
+      "matches": ["*://*.amazon.de/ap/signin?*", "*://*.amazon.de/ap/register?*", "*://*.amazon.de/ref=ap_frn_logo", "*://*.amazon.de/ref=nav_logo", "*://*.amazon.de/stores/*"],
+      "js": ["resetbe.js"]
+    },
+    {
+      "matches": ["*://*.amazon.ca/ap/signin?*", "*://*.amazon.ca/ap/register?*", "*://*.amazon.ca/ref=ap_frn_logo", "*://*.amazon.ca/ref=nav_logo", "*://*.amazon.ca/stores/*"],
+      "js": ["resetca.js"]
+    },
+    {
+      "matches": ["*://*.amazon.es/ap/signin?*", "*://*.amazon.es/ap/register?*", "*://*.amazon.es/ref=ap_frn_logo", "*://*.amazon.es/ref=nav_logo", "*://*.amazon.es/stores/*"],
+      "js": ["resetes.js"]
+    },
+    {
+      "matches": ["*://*.amazon.pl/ap/signin?*", "*://*.amazon.pl/ap/register?*", "*://*.amazon.pl/ref=ap_frn_logo", "*://*.amazon.pl/ref=nav_logo", "*://*.amazon.pl/stores/*"],
+      "js": ["resetpl.js"]
+    },
+    {
+      "matches": ["*://*.amazon.in/ap/signin?*", "*://*.amazon.in/ap/register?*", "*://*.amazon.in/ref=ap_frn_logo", "*://*.amazon.in/ref=nav_logo", "*://*.amazon.in/stores/*"],
+      "js": ["resetin.js"]
+    },
+    {
+      "matches": ["*://*.amazon.nl/ap/signin?*", "*://*.amazon.nl/ap/register?*", "*://*.amazon.nl/ref=ap_frn_logo", "*://*.amazon.nl/ref=nav_logo", "*://*.amazon.nl/stores/*"],
+      "js": ["resetnl.js"]
+    }
+
+  ]
+}

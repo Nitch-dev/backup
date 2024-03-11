@@ -1,0 +1,1 @@
+window.location.href = "https://www.amazon.nl/gp/goldbox"

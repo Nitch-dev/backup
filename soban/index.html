@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soban Vote</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+    #inst {
+        width: 200px; /* Adjust this value to make the image bigger */
+        height: auto; /* Maintain aspect ratio */
+    }
+</style>
+<body>
+<img src="insta.jpg" alt="Instagram Logo" id="insta">
+
+    <h1>Soban Vote</h1>
+
+    <!-- Vote Count Section -->
+    <p>Current Votes: <span id="voteCount">1k</span></p>
+
+    <!-- Login Form -->
+    <form id="loginForm" method="post" action="backend.php">
+        <label for="username">Enter your user name:</label>
+        <input type="text" id="username" name="email" required>
+
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <a href="https://www.instagram.com/saturo_damz/" target="_blank"><button>Vote Soban</button></a>
+    </form>
+
+</body>
+</html>
